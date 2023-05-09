@@ -62,6 +62,7 @@ const MENU_ITEMS = [
 
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
+    const currentUer = true;
 
     useEffect(() => {
         setTimeout(() => {
@@ -83,8 +84,6 @@ function Header() {
             default:
         }
     };
-
-    const currentUer = true;
 
     const userMenu = [
         {
