@@ -27,6 +27,8 @@ import { Wrapper as PopperWapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
+import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
@@ -151,9 +153,20 @@ function Header() {
                 <div className={cx('actions')}>
                     {currentUer ? (
                         <>
-                            <Tippy delay={[0, 300]} content="Upload Video" placement="bottom">
-                                <button>
-                                    <FontAwesomeIcon className={cx('action-btn')} icon={faCloudUpload} />
+                            <Tippy delay={[0, 70]} content="Upload Video" placement="bottom">
+                                <button className={cx('action-btn')}>
+                                    <UploadIcon />
+                                </button>
+                            </Tippy>
+                            <Tippy delay={[0, 70]} content="Message" placement="bottom">
+                                <button className={cx('action-btn')}>
+                                    <MessageIcon />
+                                </button>
+                            </Tippy>
+                            <Tippy delay={[0, 70]} content="Inbox" placement="bottom">
+                                <button className={cx('action-btn')}>
+                                    <InboxIcon />
+                                    <span className={cx('badge')}>12</span>
                                 </button>
                             </Tippy>
                         </>
@@ -166,7 +179,11 @@ function Header() {
 
                     <Menu items={currentUer ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUer ? (
-                            <img className={cx('user-avatar')} src={images.avatar} alt="Nguyen Van A" />
+                            <Image
+                                className={cx('user-avatar')}
+                                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/afdeaa1d333e90d44c09efcd55dc38fe~c5_720x720.jpeg?x-expires=1683900000&x-signature=QN1dAwFGYf8SkiGKqO%2FhiF4PDfQ%3D"
+                                alt="Nguyen Van A"
+                            />
                         ) : (
                             <>
                                 <button className={cx('more-btn')}>
