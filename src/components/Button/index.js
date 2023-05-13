@@ -5,7 +5,7 @@ import styles from './Button.module.scss';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { MaterialUISwitch } from '~/components/Switches';
-import propsType from 'prop-types';
+import PropTypes from 'prop-types';
 
 const cx = classNames.bind(styles);
 
@@ -89,8 +89,22 @@ function Button({
     );
 }
 
-Button.prototype = {
-    children: propsType.node.isRequired,
+Button.propsTypes = {
+    to: PropTypes.string,
+    href: PropTypes.string,
+    primary: PropTypes.bool,
+    outline: PropTypes.bool,
+    text: PropTypes.bool,
+    rounded: PropTypes.bool,
+    disabled: PropTypes.bool,
+    small: PropTypes.bool,
+    large: PropTypes.bool,
+    children: PropTypes.node.isRequired,
+    className: PropTypes.string,
+    leftIcon: PropTypes.node,
+    rightIcon: PropTypes.node,
+    switches: PropTypes.bool,
+    onClick: PropTypes.func,
 };
 
 export default Button;
