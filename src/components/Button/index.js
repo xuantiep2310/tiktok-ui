@@ -5,6 +5,7 @@ import styles from './Button.module.scss';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { MaterialUISwitch } from '~/components/Switches';
+import propsType from 'prop-types';
 
 const cx = classNames.bind(styles);
 
@@ -87,5 +88,9 @@ function Button({
         </Comp>
     );
 }
+
+Button.prototype = {
+    children: propsType.node.isRequired,
+};
 
 export default Button;

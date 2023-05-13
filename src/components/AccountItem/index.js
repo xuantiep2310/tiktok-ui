@@ -4,9 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import Image from '../Image';
+import propTypes from 'prop-types';
+
+const cx = classNames.bind(styles);
 
 function AccountItem({ data }) {
-    const cx = classNames.bind(styles);
     return (
         <Link to={`/@${data.nickname}`} className={cx('wrapper')}>
             <Image className={cx('avatar')} src={data.avatar} alt={data.full_name} />
@@ -20,5 +22,9 @@ function AccountItem({ data }) {
         </Link>
     );
 }
+
+AccountItem.propTypes = {
+    data: propTypes.object,
+};
 
 export default AccountItem;
