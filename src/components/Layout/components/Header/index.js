@@ -43,6 +43,86 @@ const MENU_ITEMS = [
                     code: 'vi',
                     title: 'Tiếng Việt',
                 },
+                {
+                    type: 'language',
+                    code: 'laos',
+                    title: 'Tiếng Lào',
+                },
+                {
+                    type: 'language',
+                    code: 'india',
+                    title: 'Tiếng Ấn Độ',
+                },
+                {
+                    type: 'language',
+                    code: 'gr',
+                    title: 'Tiếng Đức',
+                },
+                {
+                    type: 'language',
+                    code: 'cn',
+                    title: 'Tiếng Trung Quốc',
+                },
+                {
+                    type: 'language',
+                    code: 'thai',
+                    title: 'Tiếng Thái Lan',
+                },
+                {
+                    type: 'language',
+                    code: 'brazil',
+                    title: 'Tiếng Brazil',
+                },
+                {
+                    type: 'language',
+                    code: 'russia',
+                    title: 'Tiếng Nga',
+                },
+                {
+                    type: 'language',
+                    code: 'jp',
+                    title: 'Tiếng Nhật',
+                },
+                {
+                    type: 'language',
+                    code: 'ko',
+                    title: 'Tiếng Hàn',
+                },
+                {
+                    type: 'language',
+                    code: 'indo',
+                    title: 'Tiếng Indo',
+                },
+                {
+                    type: 'language',
+                    code: 'philipin',
+                    title: 'Tiếng Philipin',
+                },
+                {
+                    type: 'language',
+                    code: 'timoleste',
+                    title: 'Tiếng Đông Timo',
+                },
+                {
+                    type: 'language',
+                    code: 'brunei',
+                    title: 'Tiếng Brunei',
+                },
+                {
+                    type: 'language',
+                    code: 'saudi',
+                    title: 'Tiếng Ả Rập',
+                },
+                {
+                    type: 'language',
+                    code: 'argentina',
+                    title: 'Tiếng Argentina',
+                },
+                {
+                    type: 'language',
+                    code: 'cuba',
+                    title: 'Tiếng CuBa',
+                },
             ],
         },
     },
@@ -143,11 +223,7 @@ function Header() {
 
                     <Menu items={currentUer ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUer ? (
-                            <Image
-                                className={cx('user-avatar')}
-                                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/afdeaa1d333e90d44c09efcd55dc38fe~c5_720x720.jpeg?x-expires=1683900000&x-signature=QN1dAwFGYf8SkiGKqO%2FhiF4PDfQ%3D"
-                                alt="Nguyen Van A"
-                            />
+                            <Image className={cx('user-avatar')} src={images.avatar} alt="Nguyen Van A" />
                         ) : (
                             <>
                                 <button className={cx('more-btn')}>
